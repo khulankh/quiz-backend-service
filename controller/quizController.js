@@ -20,7 +20,7 @@ const getFacts = async (req, res) => {
 const getUserFacts = async (req, res) => {
     const userId = req.params.userId
     try {
-        const fact = await FactDatabase.find({ userId })
+        const fact = await FactDatabase.find({ userId: userId })
         res.status(200).send(fact)
     } catch (err) {
         console.log(err)
