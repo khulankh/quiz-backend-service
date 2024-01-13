@@ -4,7 +4,7 @@ const createFact = async (req, res) => {
     const body = req.body;
     try {
         const fact = await FactDatabase.create(body);
-        res.status(200).send(fact._id);
+        res.status(200).send(fact);
     } catch (err) {
         res.status(500).send('Internal Error')
     }
